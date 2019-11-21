@@ -14,26 +14,29 @@ export function createIssue(
   bearerToken: string
 ) {
   const url = api + issueUrl
-  return got.post(url, {
-    json: true,
-    headers: {
-      Authorization: bearerToken
-    },
-    body: {
-      title: 'title',
-      body: `
-${issueBody}
 
----
-Document Details
+  return got
+    .post(url, {
+      json: true,
+      headers: {
+        Authorization: bearerToken
+      },
+      body: {
+        title,
+        body: `
+  ${issueBody}
 
-- Page id: ${pageId}
-- Page title: ${title}
-- Page url: ${PageUrl}
+  ---
+  Document Details
 
-`
-    }
-  })
+  - Page id: ${pageId}
+  - Page title: ${title}
+  - Page url: ${PageUrl}
+
+  `
+      }
+    })
+    .then(e => e.body)
 }
 
 export function getAuthorizeUrl(client_id: string, state: string) {

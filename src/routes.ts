@@ -48,7 +48,7 @@ export async function handleOauthCallback(
 }
 
 export async function createIssue(req: express.Request, res: express.Response) {
-  const { pageId, title, issueBody, documentUrl } = req.body
+  const { pageId, issueTitle, issueBody, documentUrl } = req.body
 
   const authorization = req.headers.authorization
 
@@ -57,15 +57,16 @@ export async function createIssue(req: express.Request, res: express.Response) {
   }
 
   try {
-    await github.createIssue(
+    const issue = await github.createIssue(
       pageId,
-      title,
+      issueTitle,
       issueBody,
       documentUrl,
       req.path,
       authorization
     )
-    return res.status(200)
+
+    return res.json(issue)
   } catch (e) {
     console.error(e)
     return badRequest('Unable to post issue to GitHub.')
