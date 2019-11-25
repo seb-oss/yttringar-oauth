@@ -4,6 +4,7 @@ import * as cookieParser from 'cookie-parser'
 import * as cors from 'cors'
 import * as bodyParser from 'body-parser'
 import { settings } from './app-settings'
+import { unauthorized } from './errors'
 const PORT = 3000
 
 const app = express()
@@ -69,6 +70,9 @@ app.get(
   cors(corsSettings),
   (req: express.Request, res: express.Response) => {
     const { token } = req.cookies
+    if (!token) {
+      return unauthorized('No accesstoken found in cookie')
+    }
     res.json(token)
   }
 )
