@@ -1,7 +1,7 @@
 {
-  "name": "utterances-oauth",
+  "name": "yttringar-oauth",
   "version": "0.1.0",
-  "description": "GitHub OAuth server for utterances",
+  "description": "GitHub OAuth server for yttringar",
   "main": "dist/index.js",
   "scripts": {
     "start": "node .",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/utterance/utterances-oauth"
+    "url": "https://github.com/sebgroup/yttringar-oauth"
   },
   "license": "MIT",
   "devDependencies": {

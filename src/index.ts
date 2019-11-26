@@ -60,7 +60,7 @@ app.get('/authorize', authorizeUser)
 app.get('/authorized', handleOauthCallback)
 
 /* 
-  The route the utterance front end uses to retreive it's token from the cookie.
+  The route the yttringar front end uses to retreive it's token from the cookie.
 
   Cookies:
     - token (required)
@@ -78,8 +78,8 @@ app.get(
 )
 
 /* 
-  The current way utterances requests to creates issues.
-  The path that was matched (wildcard) corresponds to the path set in the utterance front end as "repo"
+  The current way yttringar requests to creates issues.
+  The path that was matched (wildcard) corresponds to the path set in the yttringar front end as "repo"
   and is used to create the issue.
 
   body: {

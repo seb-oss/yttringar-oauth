@@ -1,10 +1,10 @@
-# utterances-node-oauth
+# yttringar
 
-This repo contains the code for a node api that powers the GitHub OAuth flow and issue creation for SEB-Utterances.
+This repo contains the code for a node api that powers the GitHub OAuth flow and issue creation for [yttringar](https://github.com/sebgroup/yttringar), used internally at [SEB](https://sebgroup.com/).
 It is a fork from https://github.com/utterance/utterances-oauth.
 
-Please note: The front end for utterances https://github.com/utterance/utterances is not compatible with the node API.
-Instead please use the slightly modified SEB-Utterances fork.
+Please note: The front end for utterances is not compatible with the node API.
+Instead please use the [yttringar fork](https://github.com/sebgroup/yttringar).
 
 # Getting started
 

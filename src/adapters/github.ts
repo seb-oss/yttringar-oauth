@@ -53,7 +53,7 @@ export async function getAccessToken({ code, state }: any) {
       state
     },
     headers: {
-      'User-Agent': 'Utterances'
+      'User-Agent': 'Yttringar'
     }
   })
   if (response.body.error) {
