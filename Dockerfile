@@ -1,5 +1,9 @@
 FROM node:12.13 as base
 
+ARG registry
+
+RUN if [ ! -z "$registry" ] ; then npm config set registry "$registry" ; fi
+
 WORKDIR /app
 
 COPY package*.json ./
