@@ -12,10 +12,13 @@ export function encodeState(value: string, password: string) {
   return encrypt(JSON.stringify(state), password);
 }
 
-const invalidError = new Error('state is invalid');
-const expiredError = new Error('state is expired');
+const invalidError = new Error("state is invalid");
+const expiredError = new Error("state is expired");
 
-export async function tryDecodeState(encryptedState: string, password: string): Promise<string | Error> {
+export async function tryDecodeState(
+  encryptedState: string,
+  password: string
+): Promise<string | Error> {
   let state: State;
   try {
     state = JSON.parse(await decrypt(encryptedState, password));
